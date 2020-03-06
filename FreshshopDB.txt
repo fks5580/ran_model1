@@ -1,0 +1,93 @@
+/*회원DB*/
+create table shopmember(
+id varchar(15) primary key,
+pw varchar(15) not null,
+pwCheck varchar(10),
+name varchar(10) not null,
+country varchar(10),
+city varchar(10),
+address varchar(10),
+address1 varchar(50),
+address2 varchar(50)
+);
+
+/*게시판 DB*/
+create table shopboard(
+ no int(100) primary key,
+ title varchar(50),
+ writer varchar(10),
+ writerpw varchar(10),
+ content varchar(1000),
+ date datetime,
+ main_seq int(100),
+ main_tab int(100),
+ sub_seq int(100),
+ readcount int(10) 
+ );
+
+/*댓글DB*/
+create table replyshopboard(
+reply_no int(100) primary key,
+no int(100),
+reply_writer varchar(100),
+reply_pw varchar(100),
+reply_date timestamp,
+reply_content varchar(1000)
+);
+
+/*상품DB*/
+create table shopproduct(
+product_no int(100) primary key,
+product_name varchar(100),
+product_price int(255),
+product_count int(100),
+product_photo varchar(100)
+);
+
+/*장바구니DB*/
+create table shopcart(
+cart_no int(100) primary key,
+cart_id varchar(100),
+cart_product1 int(100),
+cart_product2 int(100),
+cart_product3 int(100),
+cart_product4 int(100),
+cart_product5 int(100),
+cart_product6 int(100),
+cart_product7 int(100),
+cart_product8 int(100),
+cart_product9 int(100),
+cart_product10 int(100)
+);
+
+/*주문 DB*/
+create table shoporder(
+order_no varchar(100) primary key,
+order_id varchar(100),
+order_name varchar(50),
+order_country varchar(50),
+order_city varchar(50),
+order_address varchar(50),
+order_address1 varchar(50),
+order_address2 varchar(50),
+delivery_option varchar(50),
+order_payment varchar(15),
+order_card_name varchar(15),
+order_card_number varchar(100),
+order_expiration_date varchar(50),
+order_card_cvc varchar(10),
+shipping_option varchar(50),
+order_total varchar(10000),
+cart_product1 int(10),
+cart_product2 int(10),
+cart_product3 int(10),
+cart_product4 int(10),
+cart_product5 int(10),
+cart_product6 int(10),
+cart_product7 int(10),
+cart_product8 int(10),
+cart_product9 int(10),
+cart_product10 int(10)
+);
+
+	
